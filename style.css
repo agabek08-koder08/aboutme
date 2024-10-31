@@ -9,9 +9,9 @@ body {
 }
 
 header {
-    background-color: #0fa1df;
-    padding: 10px 20px;
+    background-color: #333;
     color: #fff;
+    padding: 10px 20px;
 }
 
 .container {
@@ -23,15 +23,47 @@ header {
 }
 
 .logo img {
-    height: 50px; 
+    height: 40px; /* Logotip o'lchamini moslashtiring */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .contact-info a {
     color: #fff;
     text-decoration: none;
-    margin-left: 10px;
+    font-size: 16px;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* 320px uchun media query */
+@media (max-width: 320px) {
+    .contact-info {
+        display: none; /* Kichik ekranlarda contact-info yashiriladi */
+    }
+
+    .menu-icon {
+        display: block; /* Menyu tugmasi kichik ekranlarda ko'rinadi */
+    }
+
+    .contact-info.show {
+        display: flex; /* Menyu ochilganda contact-info ko'rinadi */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+    }
 }
